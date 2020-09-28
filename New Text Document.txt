@@ -1,0 +1,35 @@
+<%-- 
+    Document   : newjsp
+    Created on : 27 Sep, 2020, 3:27:04 PM
+    Author     : Hari
+--%>
+
+<%@page import="java.util.Date"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%! int day=5; %>
+<%!String[] days={"moday","tuesday","wednesday","thursday","friday","saturday"};%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <% Date date=new Date();%>
+    <% String[] days={"sunday","monday","tuesday","wednesday","thursday","friday","saturday"};%>
+    <body>
+        <h1>todays date</h1>
+        <p>todays date is <%=date%></p>
+        <% if (day==6 || day==7){
+            out.print("weekend");
+        }
+        else{
+            out.print("week day");
+        }
+        %>
+        </br>
+        <% for(int i=0;i<=6;i++){%>
+        <font color="green" size="<%= i%>"><%= days[i]%></font>
+        </br>
+        <% }%>
+    </body>
+</html>
